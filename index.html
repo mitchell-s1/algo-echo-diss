@@ -1,44 +1,50 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Mitchell Sanders | Algorithmic Echo Chambers</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Doctoral research on how algorithmic feeds shape identity, curiosity, moral intuition and psychopathology.">
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-<div class="container nav-wrapper">
-<a href="index.html" class="logo">Mitchell Sanders</a>
-<nav>
-<ul>
-<li><a href="index.html" class="active">Home</a></li>
-<li><a href="methods.html">Methods</a></li>
-<li><a href="cv.html">CV</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+/* === your existing styles (unchanged) === */
+:root{
+--bg:#fff;
+--bg-light:#f7f9fc;
+--fg:#111;
+--muted:#555;
+--accent:#0066ff;
+--max:900px;
+--gap:1.2rem;
+font-family:'Inter',system-ui,sans-serif;
+line-height:1.6;
+scroll-behavior:smooth;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg)}
+.container{max-width:var(--max);margin:auto;padding:0 var(--gap)}
+header{background:var(--bg);border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:10}
+.nav-wrapper{display:flex;align-items:center;justify-content:space-between;padding:.75rem var(--gap)}
+.logo{font-weight:600;font-size:1.1rem;color:var(--fg);text-decoration:none}
+nav ul{display:flex;gap:1.2rem;list-style:none}
+nav a{text-decoration:none;color:var(--fg);font-weight:500}
+nav a:hover{color:var(--accent)}
+#mobile-toggle{display:none;font-size:1.5rem;background:none;border:none}
+.hero{padding:4rem 0;text-align:center}
+.hero h1{font-size:2.2rem;margin-bottom:.5rem}
+.tagline{font-size:1.1rem;color:var(--muted);margin-bottom:1.5rem}
+.btn{display:inline-block;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none;font-weight:500;transition:.2s}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+.section{padding:3.5rem 0}
+.bg-light{background:var(--bg-light)}
+.center{text-align:center;margin-bottom:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-top:1.5rem}
+.card{background:#fff;border:1px solid #e5e7eb;padding:1.2rem;border-radius:6px}
+.pubs{list-style:disc;padding-left:1.2rem}
+footer{padding:2rem 0;border-top:1px solid #e5e7eb;text-align:center;font-size:.85rem;color:var(--muted)}
+.model-img{width:100%;max-width:700px;margin-top:1rem;border-radius:6px}
 
-<main>
-<section id="home" class="hero">
-<div class="container">
-<h1>The Psychological Impact of Algorithmic Echo Chambers</h1>
+/* === NEW: multi-page nav active state === */
+nav a.active{color:var(--accent);font-weight:600}
 
-<!-- HEADER IMAGE – replace URL with your own -->
-<img src="https://raw.githubusercontent.com/YOUR_USERNAME/REPO_NAME/main/assets/stockimage2.png"
-alt="abstract network header" class="header-img">
+/* === NEW: full-width header image under H1 === */
+.header-img{width:100%;max-width:1100px;margin:1.2rem auto 0;display:block;border-radius:8px}
 
-<p class="tagline">Identity, Curiosity, Moral Intuition & Psychopathology in Digital Environments</p>
-<a href="#overview" class="btn primary">Explore Project</a>
-</div>
-</section>
-
-<section id="overview" class="section">
-<div class="container">
-<h2>Project Overview</h2>
-<p>Algorithmic feeds—optimized for engagement, not truth—create chronic epistemic instability. My dissertation integrates depth-psychology, cognitive science and clinical theory to test whether these environments trigger <strong>regressive restoration</
-
+/* === mobile nav tweak (keep existing) === */
+@media(max-width:700px){
+nav ul{display:none;flex-direction:column;background:var(--bg);position:absolute;top:3rem;right:var(--gap);padding:.5rem 1rem;border:1px solid #e5e7eb;border-radius:6px}
+nav ul.show{display:flex}
+#mobile-toggle{display:block}
+}
